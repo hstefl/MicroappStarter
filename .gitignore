@@ -1,0 +1,65 @@
+# Byte-compiled / cached files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+env/
+.venv/
+.conda/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Logs and databases
+*.log
+*.sqlite3
+*.db
+
+# Django migrations (if using Django)
+*/migrations/*.py
+*/migrations/*.pyc
+
+# VSCode & PyCharm IDE settings
+.vscode/
+.idea/
+*.iml
+
+# Testing / coverage
+.tox/
+.nox/
+.coverage
+.coverage.*
+*.cover
+nosetests.xml
+pytest_cache/
+junit.xml
+
+# MyPy type checking
+.mypy_cache/
+
+# Profiling data
+*.prof
+
+# Docker & CI/CD
+docker-compose.override.yml
+
+# MacOS & Linux system files
+.DS_Store
+*.swp
+
+.dmypy.json
+
+NOTES

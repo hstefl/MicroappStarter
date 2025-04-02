@@ -1,0 +1,14 @@
+services:
+  user_service:
+    build:
+      context: ../../user_service
+    ports:
+      - "8001:8001"
+    command: poetry run uvicorn app.main:app --host 0.0.0.0 --port 8001
+
+  product_service:
+    build:
+      context: ../../product_service
+    ports:
+      - "8002:8002"
+    command: poetry run uvicorn app.main:app --host 0.0.0.0 --port 8002
