@@ -1,4 +1,4 @@
-*WIP*
+**WIP**
 
 Microservice Example: Mini E-Commerce System
 3 microservices that work together to simulate a basic online order process.
