@@ -12,7 +12,12 @@ uvicorn = {extras = ["standard"], version = "^0.29.0"}
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.3.5"
 python-on-whales = "^0.76.1"
+pytest-cov = "^6.1.0"
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+addopts = "--cov=app --cov-report=term-missing"
+testpaths = ["tests"]
