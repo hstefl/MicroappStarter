@@ -1,5 +1,8 @@
 import pytest
-from app.models.order import Order, OrderCreate
+from app.models.order import Order
+from app.models.order import OrderCreate
+from hypothesis import given
+from hypothesis.strategies import integers, one_of, none
 from pydantic import ValidationError
 
 from app.store.memory import order_db, order_db_lock
@@ -63,3 +66,21 @@ def test_order_create_invalid_product_id():
 def test_order_create_both_invalid():
     with pytest.raises(ValidationError):
         OrderCreate(user_id=None, product_id=None)
+
+
+@given(user_id=one_of(none(), integers(max_value=0)), product_id=integers(min_value=1, max_value=1000))
+def test_invalid_user_id(user_id, product_id):
+    with pytest.raises(ValidationError):
+        OrderCreate(user_id=user_id, product_id=product_id)
+
+
+@given(user_id=integers(min_value=1, max_value=1000), product_id=one_of(none(), integers(max_value=0)))
+def test_invalid_product_id(user_id, product_id):
+    with pytest.raises(ValidationError):
+        OrderCreate(user_id=user_id, product_id=product_id)
+
+
+@given(user_id=one_of(none(), integers(max_value=0)), product_id=one_of(none(), integers(max_value=0)))
+def test_both_ids_invalid(user_id, product_id):
+    with pytest.raises(ValidationError):
+        OrderCreate(user_id=user_id, product_id=product_id)
