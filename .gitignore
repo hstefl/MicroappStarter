@@ -1,65 +1,73 @@
-# Byte-compiled / cached files
-__pycache__/
-*.py[cod]
-*$py.class
+# Byte-compiled / optimized / DLL files
+**/__pycache__/
+**/*.py[cod]
+**/*$py.class
 
-# Virtual environment
-venv/
-env/
-.venv/
-.conda/
+# Virtual environments (nested poetry projects)
+**/.venv/
+**/venv/
+**/ENV/
 
-# Distribution / packaging
-build/
-dist/
-*.egg-info/
-.eggs/
-pip-wheel-metadata/
+# Poetry-specific (lock files or config overrides)
+**/poetry.lock
+**/poetry.toml
 
-# Installer logs
-pip-log.txt
-pip-delete-this-directory.txt
+# Local environment variables
+**/.env
+**/.env.*
 
-# Jupyter Notebook checkpoints
-.ipynb_checkpoints/
+# Pytest & coverage
+**/.pytest_cache/
+**/.hypothesis/
+**/.mypy_cache/
+**/htmlcov/
+**/coverage.*
+**/.coverage
+**/.cache/
 
-# Logs and databases
-*.log
-*.sqlite3
-*.db
+# Docker & build
+**/Dockerfile
+**/build/
+**/dist/
+**/*.db
+**/*.sqlite*
+**/*.log
 
-# Django migrations (if using Django)
-*/migrations/*.py
-*/migrations/*.pyc
+# Schemathesis
+**/schemathesis-report.*
+**/schemathesis-output/
 
-# VSCode & PyCharm IDE settings
-.vscode/
-.idea/
-*.iml
+# Editor/IDE
+**/.vscode/
+**/.idea/
+**/.DS_Store
+**/Thumbs.db
 
-# Testing / coverage
-.tox/
-.nox/
-.coverage
-.coverage.*
-*.cover
-nosetests.xml
-pytest_cache/
+# Node/JS (if frontend mixed in)
+**/node_modules/
+
+# Temporary files
+**/*.swp
+**/*.bak
+**/*~
+
+# Test reports and scratch files
+**/junit.xml
+**/test-results/
+**/tmp/
+
+
+# Unit test reports
 junit.xml
+test-results/
 
-# MyPy type checking
-.mypy_cache/
-
-# Profiling data
-*.prof
-
-# Docker & CI/CD
-docker-compose.override.yml
-
-# MacOS & Linux system files
-.DS_Store
+# Misc
 *.swp
+*.bak
+*~
 
-.dmypy.json
+# Node (if frontend involved)
+node_modules/
+
 
 NOTES
