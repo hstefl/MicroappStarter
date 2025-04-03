@@ -26,3 +26,8 @@ Test execution in each module
 cd services/{service_name}
 poetry run pytest
 ```
+
+Run all tests in all modules and provide combined coverage report
+```
+poetry run python scripts/run_all_tests_and_coverage.py
+```
