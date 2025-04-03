@@ -23,3 +23,19 @@ build-backend = "poetry.core.masonry.api"
 [tool.pytest.ini_options]
 addopts = "--cov=app --cov-report=term-missing"
 testpaths = ["tests"]
+
+[tool.coverage.run]
+omit = [
+    "tests/*",
+    "__init__.py",
+    "*/__init__.py"
+]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "if __name__ == .__main__.:"
+]
+
+[tool.coverage.paths]
+source = ["app", "*/app"]
